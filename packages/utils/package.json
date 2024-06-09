@@ -1,0 +1,28 @@
+{
+  "name": "@upscale/utils",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    "./invariant": {
+      "import": "./dist/invariant.js",
+      "require": "./dist/cjs/invariant.js",
+      "types": "./dist/invariant.d.ts"
+    },
+    "./singleton": {
+      "import": "./dist/singleton.js",
+      "types": "./dist/singleton.d.ts"
+    },
+    "./result": {
+      "import": "./dist/result.js",
+      "types": "./dist/result.d.ts"
+    }
+  },
+  "scripts": {
+    "build:lib": "tsc",
+    "clean": "rm -rf .turbo node_modules/.cache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@upscale/tsconfig": "workspace:*"
+  }
+}

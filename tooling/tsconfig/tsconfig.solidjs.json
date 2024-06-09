@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": [
+      "vinxi/types/client",
+      "@cloudflare/workers-types"
+    ],
+    "paths": {
+      "~/*": [
+        "${configDir}/src/*"
+      ]
+    }
+  }
+}

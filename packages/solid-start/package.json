@@ -1,0 +1,25 @@
+{
+  "name": "@upscale/solid-start",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server-context": {
+      "import": "./dist/server-context.js",
+      "types": "./dist/server-context.d.ts"
+    },
+    "./setup-worker-locals": {
+      "import": "./dist/setup-worker-locals.js",
+      "types": "./dist/setup-worker-locals.d.ts"
+    }
+  },
+  "scripts": {
+    "build:lib": "tsc",
+    "clean": "rm -rf .turbo node_modules/.cache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@upscale/tsconfig": "workspace:*",
+    "@solidjs/start": "1.0.1"
+  }
+}

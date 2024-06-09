@@ -1,0 +1,55 @@
+import { splitProps } from 'solid-js'
+import defaultAttributes from './default-attributes.js'
+import type { LucideProps } from './types'
+
+/**
+ * Converts string to KebabCase
+ * Copied from scripts/helper. If anyone knows how to properly import it here
+ * then please fix it.
+ *
+ * @param {string} string
+ * @returns {string} A kebabized string
+ */
+export const toKebabCase = (string: string) =>
+	string.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
+
+interface IconProps {
+	name: string
+}
+
+export const Icon = (props: LucideProps & IconProps) => {
+	const [localProps, rest] = splitProps(props, [
+		'color',
+		'size',
+		'strokeWidth',
+		'children',
+		'class',
+		'name',
+		'absoluteStrokeWidth',
+	])
+
+	return (
+		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+		<svg
+			{...defaultAttributes}
+			width={localProps.size ?? defaultAttributes.width}
+			height={localProps.size ?? defaultAttributes.height}
+			stroke={localProps.color ?? defaultAttributes.stroke}
+			stroke-width={
+				localProps.absoluteStrokeWidth
+					? (Number(
+							localProps.strokeWidth ?? defaultAttributes['stroke-width'],
+						) *
+							24) /
+						Number(localProps.size)
+					: Number(localProps.strokeWidth ?? defaultAttributes['stroke-width'])
+			}
+			class={`lucide lucide-${toKebabCase(localProps?.name ?? 'icon')} ${
+				localProps.class != null ? localProps.class : ''
+			}`}
+			{...rest}
+		>
+			{props.children}
+		</svg>
+	)
+}

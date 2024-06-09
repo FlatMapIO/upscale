@@ -1,0 +1,9 @@
+{
+  "name": "@upscale/tsconfig",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "files": [
+    "*.json"
+  ]
+}

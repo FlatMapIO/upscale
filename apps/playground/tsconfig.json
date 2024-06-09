@@ -1,0 +1,14 @@
+{
+	"extends": "@upscale/tsconfig/tsconfig.solidjs.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": [
+				"./src/*"
+			]
+		}
+	},
+	"include": [
+		"src"
+	]
+}

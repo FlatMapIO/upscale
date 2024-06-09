@@ -1,0 +1,51 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "+dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": [
+        "build:lib",
+        "dev:css",
+        "dev:app"
+      ]
+    },
+    "dev:css": {
+      "cache": false
+    },
+    "dev:app": {
+      "cache": false
+    },
+    "+build": {
+      "dependsOn": [
+        "build:lib",
+        "build:css",
+        "build:app"
+      ]
+    },
+    "build:lib": {
+      "cache": true,
+      "outputs": [
+        "dist"
+      ]
+    },
+    "build:app": {
+      "cache": false
+    },
+    "build:css": {
+      "cache": true,
+      "inputs": [
+        "src/**/*.tsx",
+        "panda.config.ts"
+      ],
+      "outputs": [
+        "src/styled-system/*.css"
+      ]
+    },
+    "typecheck": {
+      "outputs": [
+        "node_modules/.cache/tsbuildinfo.json"
+      ]
+    }
+  }
+}

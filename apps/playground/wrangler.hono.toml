@@ -1,0 +1,23 @@
+
+#:schema disabled
+
+name = "playground"
+main = "src/entry-hono.ts"
+# upload_source_maps = true
+compatibility_date = "2024-04-03"
+compatibility_flags = ["nodejs_compat"]
+account_id = "b646e7f95e7fe3c00170a3c39031b5b7"
+
+# Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
+# Docs: https://developers.cloudflare.com/workers/runtime-apis/kv
+
+rules = [{ type = "ESModule", globs = ["**/*.js", "**/*.mjs"] }]
+
+[[services]]
+binding = "AUTH_SERVICE"
+service = "auth-service"
+entrypoint = "AuthService"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "c772d1c287db4ecaa26b3166dc145e02"

@@ -1,0 +1,44 @@
+{
+  "name": "@upscale/playground",
+  "type": "module",
+  "scripts": {
+    "prepare": "panda",
+    "dev:app": "vinxi dev --host",
+    "dev:css": "panda cssgen -w",
+    "build:app": "vinxi build",
+    "build:css": "panda cssgen",
+    "start": "wrangler dev --local --port 3000",
+    "deploy": "wrangler deploy",
+    "clean": "rm -rf .turbo node_modules/.cache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "dev:hono": "wrangler -c wrangler.hono.toml dev",
+    "preview": "wrangler dev"
+  },
+  "dependencies": {
+    "@ark-ui/solid": "3.2.2",
+    "@formkit/tempo": "0.1.1",
+    "@humeai/voice": "^0.1.6",
+    "@solid-primitives/context": "^0.2.3",
+    "@solid-primitives/event-bus": "^1.0.11",
+    "@solid-primitives/scheduled": "^1.4.3",
+    "@solid-primitives/script-loader": "^2.1.2",
+    "@solidjs/meta": "^0.29.4",
+    "@solidjs/router": "^0.13.5",
+    "@solidjs/start": "1.0.1",
+    "@upscale/lucide": "workspace:*",
+    "@upscale/solid-start": "workspace:*",
+    "decode-formdata": "^0.7.5",
+    "expression-colors": "github:HumeAI/colors",
+    "hono": "^4.4.4",
+    "hume": "^0.6.4",
+    "motion": "^10.18.0",
+    "solid-js": "^1.8.17",
+    "solid-motionone": "^1.0.0",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.165.0",
+    "@upscale/tsconfig": "workspace:*",
+    "@upscale/utils": "workspace:*"
+  }
+}

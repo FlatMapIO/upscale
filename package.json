@@ -1,0 +1,32 @@
+{
+  "name": "upscale",
+  "private": true,
+  "scripts": {
+    "build:libs": "turbo run build:lib",
+    "playground:dev": "turbo run --filter=@upscale/playground +dev --parallel",
+    "playground:build": "turbo run --filter=@upscale/playground +build",
+    "playground:deploy": "pnpm run --filter=@upscale/playground deploy",
+    "playground:up": "pnpm playground:build && pnpm playground:deploy",
+    "clean": "turbo run clean",
+    "postinstall": "rm -rf node_modules/undici-types"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.0",
+    "@cloudflare/vitest-pool-workers": "^0.4.2",
+    "@cloudflare/workers-types": "^4.20240605.0",
+    "@pandabox/unplugin-panda-macro": "^0.0.4",
+    "@pandacss/dev": "^0.40.1",
+    "@park-ui/panda-preset": "^0.38.0",
+    "dotenv-cli": "^7.4.1",
+    "drizzle-kit": "^0.22.6",
+    "esbuild": "^0.21.4",
+    "turbo": "^2.0.3",
+    "typescript": "5.5.0-beta",
+    "vinxi": "0.3.11",
+    "vite": "^5.2.13",
+    "vite-plugin-solid": "^2.10.2",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.5.3",
+    "wrangler": "^3.60.0"
+  }
+}

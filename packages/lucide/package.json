@@ -1,0 +1,20 @@
+{
+  "name": "@upscale/lucide",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": {
+      "solid": "./dist/index.jsx",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build:lib": "tsc",
+    "clean": "rm -rf .turbo node_modules/.cache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@upscale/tsconfig": "workspace:*",
+    "solid-js": "^1.8.17"
+  }
+}

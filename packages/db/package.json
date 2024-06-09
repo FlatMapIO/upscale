@@ -1,0 +1,33 @@
+{
+  "name": "@upscale/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./meta-fields": {
+      "import": "./dist/meta-fields.js",
+      "require": "./dist/cjs/meta-fields.js",
+      "types": "./dist/meta-fields.d.ts"
+    },
+    "./libsql": {
+      "import": "./dist/libsql.js",
+      "require": "./dist/cjs/libsql.js",
+      "types": "./dist/libsql.d.ts"
+    },
+    "./d1": {
+      "import": "./dist/d1.js",
+      "types": "./dist/d1.d.ts"
+    }
+  },
+  "scripts": {
+    "build:lib": "tsc && bun build.ts",
+    "clean": "rm -rf .turbo node_modules/.cache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@libsql/client": "^0.6.2",
+    "@sapphire/snowflake": "^3.5.3",
+    "@upscale/tsconfig": "workspace:*",
+    "drizzle-orm": "^0.31.2"
+  }
+}

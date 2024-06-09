@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /** Base Options */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "target": "ESNext",
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "resolvePackageJsonExports": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    /** Keep TSC performant in monorepos */
+    "disableSourceOfProjectReferenceRedirect": true,
+    /** Strictness */
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": false,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "checkJs": false,
+    /** Transpile using Bundler (not tsc) */
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
+    "noEmit": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".vinxi",
+    ".output"
+  ]
+}
