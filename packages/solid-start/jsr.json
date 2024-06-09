@@ -1,8 +1,0 @@
-{
-  "name": "@upscale/solid-start",
-  "version": "0.0.1",
-  "exports": {
-    "./server-context": "./src/server-context.ts",
-    "./setup-worker-locals": "./src/setup-worker-locals.ts"
-  }
-}

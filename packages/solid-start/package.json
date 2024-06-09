@@ -19,7 +19,8 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
+    "@solidjs/start": "1.0.1",
     "@upscale/tsconfig": "workspace:*",
-    "@solidjs/start": "1.0.1"
+    "solid-js": "^1.8.17"
   }
 }
