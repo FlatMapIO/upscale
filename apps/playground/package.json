@@ -29,7 +29,7 @@
     "@upscale/solid-start": "workspace:*",
     "decode-formdata": "^0.7.5",
     "expression-colors": "github:HumeAI/colors",
-    "hono": "^4.4.4",
+    "hono": "^4.12.7",
     "hume": "^0.6.4",
     "motion": "^10.18.0",
     "solid-js": "^1.8.17",
